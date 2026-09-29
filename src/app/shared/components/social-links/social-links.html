@@ -1,0 +1,17 @@
+<ul class="social-links">
+  <li>
+    <a class="social-links__link" [href]="githubUrl" target="_blank" rel="noopener noreferrer" aria-label="GitHub" (click)="linkClicked.emit()">
+      <img src="icons/github.svg" alt="" width="40" height="40">
+    </a>
+  </li>
+  <li>
+    <a class="social-links__link" routerLink="/" fragment="kontakt" aria-label="Zum Kontaktformular" (click)="linkClicked.emit()">
+      <img src="icons/email.svg" alt="" width="40" height="40">
+    </a>
+  </li>
+  <li>
+    <a class="social-links__link" [href]="linkedinUrl" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" (click)="linkClicked.emit()">
+      <img src="icons/linkedin.svg" alt="" width="40" height="40">
+    </a>
+  </li>
+</ul>

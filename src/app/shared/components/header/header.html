@@ -1,0 +1,41 @@
+<header class="header" [class.header--menu-open]="isMenuOpen">
+  <div class="header__content">
+    <a class="header__logo" routerLink="/" (click)="closeMenu()" aria-label="Zum Seitenanfang">
+      <img src="img/logo.svg" alt="Logo Vincent Sonneck" width="67" height="30">
+    </a>
+
+    <div class="header__actions">
+      <app-language-toggle class="header__language" />
+      <button
+        class="burger"
+        [class.burger--open]="isMenuOpen"
+        type="button"
+        [attr.aria-label]="isMenuOpen ? 'Menü schließen' : 'Menü öffnen'"
+        (click)="toggleMenu()">
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav class="menu" [class.menu--open]="isMenuOpen" aria-label="Hauptmenü">
+  <ul class="menu__list">
+    @for (link of menuLinks; track link.fragment) {
+      <li>
+        <a class="menu__link" routerLink="/" [fragment]="link.fragment" (click)="closeMenu()">{{ link.label }}</a>
+      </li>
+    }
+  </ul>
+
+  <div class="menu__contact">
+    <div class="menu__contact-content">
+      <div>
+        <p class="menu__title">Sag Hallo!</p>
+        <a class="menu__email" [href]="'mailto:' + email">{{ email }}</a>
+      </div>
+      <app-social-links (linkClicked)="closeMenu()" />
+    </div>
+  </div>
+</nav>
