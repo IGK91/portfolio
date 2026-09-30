@@ -1,0 +1,22 @@
+<section class="references" id="referenzen">
+  <div class="references__content">
+    <h2 class="references__title">Referenzen</h2>
+    <p class="references__intro">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.
+    </p>
+
+    <ul class="references__list">
+      @for (reference of references; track $index) {
+        <li class="reference">
+          <span class="reference__quote-box">
+            <img class="reference__quote" src="icons/quote.svg" alt="" width="28" height="20">
+            <img class="reference__quote reference__quote--hover" src="icons/quote-green.svg" alt="" width="28" height="20">
+          </span>
+          <p class="reference__name">{{ reference.name }}</p>
+          <p class="reference__role">{{ reference.role }}</p>
+          <blockquote class="reference__text">{{ reference.text }}</blockquote>
+        </li>
+      }
+    </ul>
+  </div>
+</section>

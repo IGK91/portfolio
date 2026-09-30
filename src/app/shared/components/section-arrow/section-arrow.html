@@ -1,0 +1,5 @@
+<div class="section-arrow" [class.section-arrow--right]="direction === 'right'">
+  <a class="section-arrow__link" routerLink="/" [fragment]="targetFragment" [attr.aria-label]="label">
+    <img class="section-arrow__icon" [src]="'icons/arrow-down-' + direction + '.svg'" alt="" width="156" height="156">
+  </a>
+</div>
