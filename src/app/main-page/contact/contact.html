@@ -1,0 +1,83 @@
+<section class="contact" id="kontakt">
+  <h2 class="contact__title">Sag Hallo!</h2>
+  <p class="contact__subtitle">Lust auf ein neues Projekt?</p>
+  <p class="contact__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+  <form class="contact__form" [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+    <div
+      class="field"
+      [class.field--invalid]="name.touched && name.invalid"
+      [class.field--valid]="name.touched && name.valid">
+      <input
+        id="contact-name"
+        class="field__input"
+        type="text"
+        placeholder=" "
+        autocomplete="name"
+        formControlName="name">
+      <label class="field__label" for="contact-name">Dein Name</label>
+      <img class="field__icon field__icon--error" src="icons/input-error.svg" alt="">
+      <img class="field__icon field__icon--valid" src="icons/input-success.svg" alt="">
+      @if (name.touched && name.invalid) {
+        <p class="field__error">Bitte gib deinen Namen ein.</p>
+      }
+    </div>
+
+    <div
+      class="field"
+      [class.field--invalid]="email.touched && email.invalid"
+      [class.field--valid]="email.touched && email.valid">
+      <input
+        id="contact-email"
+        class="field__input"
+        type="email"
+        placeholder=" "
+        autocomplete="email"
+        formControlName="email">
+      <label class="field__label" for="contact-email">Deine E-Mail</label>
+      <img class="field__icon field__icon--error" src="icons/input-error.svg" alt="">
+      <img class="field__icon field__icon--valid" src="icons/input-success.svg" alt="">
+      @if (email.touched && email.invalid) {
+        <p class="field__error">Bitte gib eine gültige E-Mail-Adresse ein.</p>
+      }
+    </div>
+
+    <div
+      class="field field--message"
+      [class.field--invalid]="message.touched && message.invalid"
+      [class.field--valid]="message.touched && message.valid">
+      <textarea
+        id="contact-message"
+        class="field__input field__textarea"
+        placeholder=" "
+        formControlName="message"></textarea>
+      <label class="field__label" for="contact-message">Deine Nachricht</label>
+      <img class="field__icon field__icon--error" src="icons/input-error.svg" alt="">
+      <img class="field__icon field__icon--valid" src="icons/input-success.svg" alt="">
+      <img class="field__resize" src="icons/resize-handle.svg" alt="">
+      @if (message.touched && message.invalid) {
+        <p class="field__error">Bitte schreib mir eine Nachricht (mindestens 10 Zeichen).</p>
+      }
+    </div>
+
+    <div class="privacy">
+      <label class="privacy__label">
+        <input class="privacy__input" type="checkbox" formControlName="privacy">
+        <span class="privacy__box"></span>
+        <span class="privacy__text">
+          Ich habe die <a class="privacy__link" routerLink="/datenschutz" target="_blank">Datenschutzerklärung</a>
+          gelesen und stimme der Verarbeitung meiner Daten zu.
+        </span>
+      </label>
+      @if (privacy.touched && privacy.invalid) {
+        <p class="privacy__error">Bitte akzeptiere die Datenschutzerklärung.</p>
+      }
+    </div>
+
+    <div class="contact__submit">
+      <button class="btn btn--light contact__button" type="submit" [disabled]="contactForm.invalid">
+        Nachricht senden
+      </button>
+    </div>
+  </form>
+</section>
