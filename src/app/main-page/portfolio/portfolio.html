@@ -1,0 +1,14 @@
+<section class="portfolio" id="portfolio">
+  <div class="portfolio__content">
+    <h2 class="portfolio__title">Portfolio</h2>
+    <p class="portfolio__intro">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.
+    </p>
+
+    <div class="portfolio__list">
+      @for (project of projects; track project.name; let i = $index) {
+        <app-project-item [project]="project" [index]="i" [total]="projects.length" />
+      }
+    </div>
+  </div>
+</section>

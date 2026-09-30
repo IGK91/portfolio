@@ -1,0 +1,23 @@
+<article class="project" [class.project--reversed]="isReversed">
+  <p class="project__number">{{ numberLabel }}</p>
+
+  <div class="project__image-wrapper">
+    <img class="project__image" [src]="project.image" [alt]="'Vorschau von ' + project.name" width="620" height="393">
+    <span class="project__frame"></span>
+    <a
+      class="project__live"
+      [href]="project.liveUrl"
+      target="_blank"
+      rel="noopener noreferrer"
+      [attr.aria-label]="project.name + ' live testen'">
+      <img class="project__live-icon" src="icons/arrow-up-right.svg" alt="" width="40" height="40">
+    </a>
+  </div>
+
+  <div class="project__details">
+    <h3 class="project__name">{{ project.name }}</h3>
+    <p class="project__technologies">{{ project.technologies.join(' | ') }}</p>
+    <p class="project__description">{{ project.description }}</p>
+    <a class="btn project__github" [href]="project.githubUrl" target="_blank" rel="noopener noreferrer">GitHub</a>
+  </div>
+</article>
