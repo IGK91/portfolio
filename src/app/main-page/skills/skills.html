@@ -1,0 +1,27 @@
+<section class="skills" id="skills">
+  <div class="skills__content">
+    <div class="skills__box">
+      <h2 class="skills__title">Meine Skills</h2>
+
+      <ul class="skills__grid">
+        @for (skill of skills; track skill.name) {
+          <li class="skill">
+            <span class="skill__icon-wrapper">
+              <img class="skill__icon" [src]="skill.icon" alt="">
+            </span>
+            <span class="skill__name">{{ skill.name }}</span>
+          </li>
+        }
+      </ul>
+
+      <div class="skills__learning">
+        <img class="skills__learning-icon" src="icons/skill-continued-learning.svg" alt="" width="75" height="75">
+        <p class="skills__learning-text">
+          <span>Dir fehlt ein Skill?</span>
+          <a class="text-link" routerLink="/" fragment="kontakt">Kontaktiere mich</a>
+          <span>Ich lerne gern Neues dazu!</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
