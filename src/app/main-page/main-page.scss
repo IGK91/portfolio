@@ -1,1 +1,11 @@
-// Design folgt
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+// Schwarze Fläche mit schräger Oberkante für Kontakt und Footer
+.contact-area {
+  position: relative;
+  margin-top: -119px;
+  padding-top: 182px;
+  background-color: $color-black;
+  @include slanted-top(177px);
+}
