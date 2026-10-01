@@ -1,0 +1,35 @@
+@use 'variables' as *;
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Inhalt ist maximal 1440px breit, der Hintergrund geht über die volle Breite
+@mixin content-width {
+  width: 100%;
+  max-width: $content-width;
+  margin-inline: auto;
+  padding-inline: $page-padding;
+}
+
+// Große Überschrift, die beim Hover grün wird
+@mixin section-title($color: $color-black) {
+  font-family: $font-headline;
+  font-weight: 800;
+  font-size: 78px;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  color: $color;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: $color-green;
+  }
+}
+
+// Schräge Oberkante der schwarzen Flächen
+@mixin slanted-top($slant) {
+  clip-path: polygon(0 0, 100% $slant, 100% 100%, 0 100%);
+}
