@@ -1,1 +1,143 @@
-// Design folgt
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.contact {
+  @include content-width;
+  padding-bottom: 34px;
+  color: $color-cream;
+}
+
+.contact__title {
+  margin-left: 4px;
+  @include section-title($color-cream);
+}
+
+.contact__subtitle {
+  margin-top: 58px;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.2;
+  color: $color-green;
+  text-align: center;
+}
+
+.contact__text {
+  max-width: 561px;
+  margin: 18px auto 0;
+  font-size: 22px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+  width: 617px;
+  max-width: 100%;
+  margin: 22px auto 0;
+}
+
+// Eingabefelder
+.field {
+  position: relative;
+}
+
+.field__input {
+  display: block;
+  width: 100%;
+  height: 50px;
+  padding: 15px 60px 15px 25px;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  background-color: $color-black;
+  font-size: 16px;
+  line-height: 1.2;
+  color: $color-cream;
+  box-shadow: inset 0 -2px 0 $color-cream;
+  transition: box-shadow $transition-fast;
+
+  &:focus {
+    box-shadow: inset 0 0 0 2px $color-cream;
+  }
+}
+
+.field__textarea {
+  height: 202px;
+  min-height: 202px;
+  resize: vertical;
+}
+
+// Label rutscht beim Fokus oder mit Inhalt auf die Rahmenlinie
+.field__label {
+  position: absolute;
+  top: 15px;
+  left: 19px;
+  padding-inline: 6px;
+  font-size: 16px;
+  line-height: 1.2;
+  pointer-events: none;
+  transition:
+    top 150ms ease-out,
+    background-color 150ms ease-out;
+}
+
+.field__input:focus + .field__label,
+.field__input:not(:placeholder-shown) + .field__label {
+  top: -9px;
+  background-color: $color-black;
+}
+
+.field__icon {
+  position: absolute;
+  top: 12.5px;
+  right: 25px;
+  display: none;
+  width: 25px;
+  height: 25px;
+  pointer-events: none;
+}
+
+.field__resize {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  width: 13px;
+  height: 13px;
+  pointer-events: none;
+}
+
+// Fehlermeldung liegt unter dem Feld und verschiebt nichts
+.field__error {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  font-size: 12px;
+  line-height: 1.2;
+  color: $color-error;
+}
+
+.field--invalid {
+  .field__input {
+    box-shadow: inset 0 0 0 2px $color-cream;
+  }
+
+  .field__icon--error {
+    display: block;
+  }
+}
+
+.field--valid {
+  .field__input {
+    box-shadow: inset 0 0 0 1px $color-cream;
+  }
+
+  .field__icon--valid {
+    display: block;
+  }
+}
+
+.field .field__input:hover {
+  box-shadow: inset 0 0 0 4px $color-cream;
+}
