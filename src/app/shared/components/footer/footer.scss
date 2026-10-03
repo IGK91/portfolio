@@ -78,7 +78,7 @@
   }
 }
 
-// Pfeil nach oben
+// Pfeil nach oben, beim Hover wird der längere Pfeil gezeigt
 .scroll-top {
   position: absolute;
   top: -113px;
@@ -89,4 +89,14 @@
 
 .scroll-top__arrow--hover {
   display: none;
+}
+
+.scroll-top:hover {
+  .scroll-top__arrow {
+    display: none;
+  }
+
+  .scroll-top__arrow--hover {
+    display: block;
+  }
 }
