@@ -31,7 +31,7 @@
   margin-top: 40px;
 }
 
-// Karte mit Rahmen
+// Karte mit Rahmen, beim Hover grün
 .reference {
   flex: 1;
   display: flex;
@@ -42,6 +42,19 @@
   padding: 24px 16px;
   border: 4px solid $color-black;
   text-align: center;
+  transition: border-color $transition-fast;
+
+  &:hover {
+    border-color: $color-green;
+
+    .reference__quote {
+      display: none;
+    }
+
+    .reference__quote--hover {
+      display: block;
+    }
+  }
 }
 
 .reference__quote-box {
