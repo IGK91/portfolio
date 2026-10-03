@@ -1,1 +1,49 @@
-// Design folgt
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.legal {
+  padding: $header-height + 57px 0 120px;
+}
+
+.legal__content {
+  @include content-width;
+  max-width: 1032px + 2 * $page-padding;
+}
+
+.legal__title {
+  margin-bottom: 64px;
+  @include section-title;
+}
+
+.legal__subtitle {
+  margin-top: 24px;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 1.2;
+  color: $color-green;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+}
+
+.legal__text {
+  margin-top: 16px;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.legal__link {
+  color: $color-green;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Schwarzer Footer mit leicht schräger Oberkante
+.legal-footer {
+  padding-top: 109px;
+  background-color: $color-black;
+  @include slanted-top(37px);
+}
