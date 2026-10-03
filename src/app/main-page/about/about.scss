@@ -1,3 +1,4 @@
+@use '../../../styles/variables' as *;
 @use '../../../styles/mixins' as *;
 
 .about {
@@ -59,10 +60,28 @@
   margin-top: 40px;
 }
 
+// Foto mit versetztem Rahmen beim Hover
 .about__photo {
+  position: relative;
   width: 100%;
   max-width: 533px;
   margin-top: 128px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 100%;
+    height: 100%;
+    border: 4px solid $color-black;
+    opacity: 0;
+    transition: opacity $transition-fast;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
 }
 
 .about__image {
