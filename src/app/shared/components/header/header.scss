@@ -29,3 +29,56 @@
   align-items: center;
   gap: 50px;
 }
+
+// Burger-Icon: drei Striche, geöffnet ein X
+.burger {
+  position: relative;
+  width: 40px;
+  height: 32px;
+}
+
+.burger__line {
+  position: absolute;
+  left: 0;
+  width: 40px;
+  height: 4px;
+  background-color: $color-black;
+  transition:
+    transform 150ms ease-out,
+    width 150ms ease-out,
+    left 150ms ease-out,
+    top 150ms ease-out;
+
+  &:nth-child(1) {
+    top: -3px;
+  }
+
+  &:nth-child(2) {
+    top: 14px;
+  }
+
+  &:nth-child(3) {
+    top: 31px;
+  }
+}
+
+.burger--open .burger__line {
+  &:nth-child(1) {
+    top: 14px;
+    left: 20px;
+    width: 20px;
+    transform-origin: left center;
+    transform: rotate(-40deg);
+  }
+
+  &:nth-child(2) {
+    transform: rotate(40deg);
+  }
+
+  &:nth-child(3) {
+    top: 14px;
+    width: 20px;
+    transform-origin: right center;
+    transform: rotate(-40deg);
+  }
+}
