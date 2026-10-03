@@ -22,4 +22,14 @@
 .section-arrow__icon {
   width: 100%;
   height: 100%;
+  transition: transform 170ms ease-out;
+}
+
+// Der Pfeil bewegt sich beim Hover in seine Richtung (der Link selbst bleibt stehen)
+.section-arrow__link:hover .section-arrow__icon {
+  transform: translate(-65px, 65px);
+}
+
+.section-arrow--right .section-arrow__link:hover .section-arrow__icon {
+  transform: translate(65px, 65px);
 }
