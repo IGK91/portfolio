@@ -82,3 +82,146 @@
     transform: rotate(-40deg);
   }
 }
+
+// Menü-Overlay
+.menu {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  padding-top: $header-height;
+  overflow-y: auto;
+  background-color: $color-cream;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity $transition-medium,
+    visibility $transition-medium;
+
+  &--open {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.menu__list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+  padding-block: 16px;
+  transform: translateY(80px);
+  transition: transform 250ms ease-out;
+}
+
+.menu--open .menu__list {
+  transform: translateY(0);
+}
+
+.menu__link {
+  position: relative;
+  display: block;
+  width: max-content;
+  min-width: 580px;
+  padding: 36px 48px;
+  text-align: center;
+  white-space: nowrap;
+  font-family: $font-headline;
+  font-weight: 700;
+  font-size: 96px;
+  line-height: 1;
+  letter-spacing: -0.025em;
+
+  // L-Ecke unten links
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 39px;
+    height: 52px;
+    border-left: 4px solid $color-black;
+    border-bottom: 4px solid $color-black;
+    transition: opacity $transition-fast;
+  }
+
+  // Unterstrich beim Hover
+  &::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 4px;
+    background-color: $color-black;
+  }
+
+  &:hover {
+    &::before {
+      opacity: 0;
+    }
+
+    &::after {
+      animation: menu-underline 250ms ease-out forwards;
+    }
+  }
+
+  &:active {
+    outline: 4px solid $color-black;
+    outline-offset: -4px;
+
+    &::after {
+      display: none;
+    }
+  }
+}
+
+@keyframes menu-underline {
+  0%,
+  40% {
+    width: 100%;
+  }
+
+  100% {
+    width: 42%;
+  }
+}
+
+.menu__contact {
+  flex-shrink: 0;
+  height: 318px;
+  background-color: $color-black;
+  color: $color-cream;
+  @include slanted-top(45%);
+  transform: translateY(60px);
+  transition: transform 250ms ease-out;
+}
+
+.menu--open .menu__contact {
+  transform: translateY(0);
+}
+
+.menu__contact-content {
+  @include content-width;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 58px;
+}
+
+.menu__title {
+  @include section-title($color-cream);
+}
+
+.menu__email {
+  display: block;
+  margin-top: 8px;
+  font-weight: 300;
+  font-size: 23px;
+  line-height: 1;
+  letter-spacing: -0.025em;
+}
