@@ -8,4 +8,14 @@
   padding-top: 182px;
   background-color: $color-black;
   @include slanted-top(177px);
+
+  @include respond($breakpoint-tablet) {
+    @include slanted-top(120px);
+  }
+
+  @include respond($breakpoint-mobile) {
+    margin-top: -70px;
+    padding-top: 53px;
+    @include slanted-top(12.5vw);
+  }
 }

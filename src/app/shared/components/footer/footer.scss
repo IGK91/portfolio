@@ -9,11 +9,28 @@
   align-items: flex-start;
   padding-bottom: 13px;
   color: $color-cream;
+
+  @include respond($breakpoint-mobile) {
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    padding-bottom: 36px;
+  }
 }
 
-// Social Links fürs Handy, auf dem Desktop ausgeblendet
+// Social Links: auf dem Desktop rechts, auf dem Handy ganz oben
 .footer__social-mobile {
   display: none;
+
+  @include respond($breakpoint-mobile) {
+    display: block;
+  }
+}
+
+.footer__social-desktop {
+  @include respond($breakpoint-mobile) {
+    display: none;
+  }
 }
 
 .footer__brand {
@@ -21,6 +38,10 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 17px;
+
+  @include respond($breakpoint-mobile) {
+    align-items: center;
+  }
 }
 
 .footer__logo img {
@@ -31,11 +52,23 @@
 .footer__copyright {
   margin-left: -4px;
   font-size: 22px;
+
+  @include respond($breakpoint-mobile) {
+    display: none;
+  }
 }
 
 // E-Mail gibt es nur auf dem Handy
 .footer__email {
   display: none;
+
+  @include respond($breakpoint-mobile) {
+    display: block;
+    margin-top: -4px;
+    font-weight: 300;
+    font-size: 19px;
+    letter-spacing: -0.025em;
+  }
 }
 
 .footer__links {
@@ -44,12 +77,21 @@
   align-items: flex-end;
   gap: 15px;
   padding-top: 15px;
+
+  @include respond($breakpoint-mobile) {
+    align-items: center;
+    padding-top: 0;
+  }
 }
 
 .footer__legal {
   display: flex;
   gap: 8px;
   margin-right: -10px;
+
+  @include respond($breakpoint-mobile) {
+    margin: -16px 0 0;
+  }
 }
 
 .footer__legal-link {
@@ -85,6 +127,14 @@
   right: $page-padding - 6px;
   width: 40px;
   height: 80px;
+
+  @include respond($breakpoint-tablet) {
+    right: $page-padding-tablet - 6px;
+  }
+
+  @include respond($breakpoint-mobile) {
+    display: none;
+  }
 }
 
 .scroll-top__arrow--hover {
