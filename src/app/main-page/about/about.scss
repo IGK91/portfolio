@@ -3,6 +3,10 @@
 
 .about {
   padding-top: 117px;
+
+  @include respond($breakpoint-mobile) {
+    padding-top: 64px;
+  }
 }
 
 .about__content {
@@ -12,6 +16,12 @@
   justify-content: space-between;
   align-items: start;
   column-gap: 48px;
+
+  @include respond($breakpoint-tablet) {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    row-gap: 48px;
+  }
 }
 
 .about__info {
@@ -26,6 +36,10 @@
   align-self: flex-start;
   white-space: nowrap;
   @include section-title;
+
+  @include respond($breakpoint-tablet) {
+    align-self: center;
+  }
 }
 
 .about__text {
@@ -34,6 +48,12 @@
   padding-left: 4px;
   font-size: 22px;
   line-height: 1.2;
+
+  @include respond($breakpoint-mobile) {
+    margin-top: 32px;
+    padding-left: 1px;
+    font-size: 20px;
+  }
 }
 
 .about__facts {
@@ -42,6 +62,11 @@
   flex-direction: column;
   gap: 16px;
   margin-top: 48px;
+
+  @include respond($breakpoint-mobile) {
+    gap: 8px;
+    margin-top: 32px;
+  }
 }
 
 .about__fact {
@@ -54,10 +79,23 @@
     width: 40px;
     height: 40px;
   }
+
+  @include respond($breakpoint-mobile) {
+    font-size: 20px;
+
+    img {
+      width: 32px;
+      height: 32px;
+    }
+  }
 }
 
 .about__button {
   margin-top: 40px;
+
+  @include respond($breakpoint-mobile) {
+    margin-top: 75px;
+  }
 }
 
 // Foto mit versetztem Rahmen beim Hover
@@ -81,6 +119,21 @@
 
   &:hover::after {
     opacity: 1;
+  }
+
+  @include respond($breakpoint-tablet) {
+    margin-top: 32px;
+  }
+
+  @include respond($breakpoint-mobile) {
+    max-width: 420px;
+    width: calc(100% - 12px);
+    margin-top: 5px;
+
+    &::after {
+      top: 12px;
+      left: 12px;
+    }
   }
 }
 
