@@ -3,6 +3,10 @@
 
 .skills {
   padding-top: 22px;
+
+  @include respond($breakpoint-mobile) {
+    padding-top: 1px;
+  }
 }
 
 .skills__content {
@@ -14,6 +18,11 @@
   margin-top: 54px;
   padding: 116px 24px 115px;
   border: 4px solid $color-black;
+
+  @include respond($breakpoint-mobile) {
+    margin-top: 30px;
+    padding: 59px 8px 44px;
+  }
 }
 
 // Überschrift liegt auf der oberen Rahmenlinie
@@ -26,6 +35,11 @@
   white-space: nowrap;
   transform: translateX(-50%);
   @include section-title;
+
+  @include respond($breakpoint-mobile) {
+    top: -32px;
+    font-size: 31px;
+  }
 }
 
 .skills__grid {
@@ -34,6 +48,25 @@
   justify-content: center;
   column-gap: 128px;
   row-gap: 70px;
+
+  @include respond($breakpoint-small-desktop) {
+    column-gap: 64px;
+  }
+
+  @include respond($breakpoint-tablet) {
+    grid-template-columns: repeat(4, 100px);
+    column-gap: 48px;
+  }
+
+  @include respond($breakpoint-mobile) {
+    grid-template-columns: repeat(3, minmax(0, 86px));
+    column-gap: 20px;
+    row-gap: 31px;
+  }
+
+  @include respond($breakpoint-small-mobile) {
+    column-gap: 12px;
+  }
 }
 
 .skill {
@@ -42,6 +75,13 @@
   align-items: center;
   gap: 10px;
   text-align: center;
+
+  // Letztes Icon allein in der Zeile: mittig (Handy, 3 Spalten)
+  @include respond($breakpoint-mobile) {
+    &:last-child:nth-child(3n + 1) {
+      grid-column: 2;
+    }
+  }
 }
 
 .skill__icon-wrapper {
@@ -51,12 +91,22 @@
   width: 100px;
   height: 75px;
   overflow: hidden;
+
+  @include respond($breakpoint-mobile) {
+    width: 86px;
+    height: 60px;
+  }
 }
 
 .skill__icon {
   height: 75px;
   width: auto;
   max-width: 80px;
+
+  @include respond($breakpoint-mobile) {
+    height: 60px;
+    max-width: 64px;
+  }
 }
 
 .skill__name {
@@ -103,12 +153,23 @@
   align-items: center;
   gap: 16px;
   margin-top: 40px;
+
+  @include respond($breakpoint-mobile) {
+    justify-content: flex-start;
+    gap: 8px;
+    margin-top: 42px;
+  }
 }
 
 .skills__learning-icon {
   flex-shrink: 0;
   width: 75px;
   height: 75px;
+
+  @include respond($breakpoint-mobile) {
+    width: 60px;
+    height: 60px;
+  }
 }
 
 .skills__learning-text {
@@ -116,4 +177,21 @@
   flex-wrap: wrap;
   align-items: center;
   font-size: 22px;
+
+  @include respond($breakpoint-mobile) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    font-size: 20px;
+    line-height: 1;
+
+    .text-link {
+      padding: 0;
+
+      &::after {
+        right: 0;
+        bottom: -2px;
+      }
+    }
+  }
 }
