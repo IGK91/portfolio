@@ -17,6 +17,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @include respond($breakpoint-mobile) {
+    padding-inline: 25px;
+  }
 }
 
 .header__logo img {
@@ -28,6 +32,21 @@
   display: flex;
   align-items: center;
   gap: 50px;
+
+  @include respond($breakpoint-mobile) {
+    gap: 40px;
+  }
+}
+
+// Auf dem Handy sitzt der Sprachumschalter nur im geöffneten Menü
+.header__language {
+  @include respond($breakpoint-mobile) {
+    display: none;
+  }
+}
+
+.header--menu-open .header__language {
+  display: block;
 }
 
 // Burger-Icon: drei Striche, geöffnet ein X
