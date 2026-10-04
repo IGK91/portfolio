@@ -6,6 +6,10 @@
   height: 100vh;
   min-height: 680px;
   padding-top: $header-height;
+
+  @include respond($breakpoint-mobile) {
+    min-height: 600px;
+  }
 }
 
 .hero__content {
@@ -34,6 +38,26 @@
   line-height: 120px;
   letter-spacing: -0.025em;
   text-align: center;
+
+  @include respond($breakpoint-small-desktop) {
+    font-size: 104px;
+    line-height: 98px;
+  }
+
+  @include respond($breakpoint-tablet) {
+    font-size: 80px;
+    line-height: 76px;
+  }
+
+  @include respond($breakpoint-mobile) {
+    font-size: 45px;
+    line-height: 50px;
+  }
+
+  @include respond($breakpoint-small-mobile) {
+    font-size: 38px;
+    line-height: 44px;
+  }
 }
 
 .hero__name-row {
@@ -42,6 +66,19 @@
   width: 1019px;
   max-width: 100%;
   margin-top: 10px;
+
+  @include respond($breakpoint-small-desktop) {
+    width: 830px;
+  }
+
+  @include respond($breakpoint-tablet) {
+    width: 640px;
+  }
+
+  @include respond($breakpoint-mobile) {
+    width: 320px;
+    margin-top: 6px;
+  }
 }
 
 .hero__line {
@@ -58,6 +95,17 @@
   line-height: 60px;
   letter-spacing: -0.025em;
   color: $color-green;
+
+  @include respond($breakpoint-tablet) {
+    font-size: 36px;
+    line-height: 44px;
+  }
+
+  @include respond($breakpoint-mobile) {
+    padding-left: 6px;
+    font-size: 23px;
+    line-height: 30px;
+  }
 }
 
 .hero__bottom {
@@ -65,6 +113,10 @@
   justify-content: space-between;
   align-items: flex-end;
   padding-bottom: 45px;
+
+  @include respond($breakpoint-mobile) {
+    padding-bottom: 28px;
+  }
 }
 
 .hero__email {
@@ -79,6 +131,10 @@
   &:hover {
     color: $color-green;
   }
+
+  @include respond($breakpoint-mobile) {
+    font-size: 20px;
+  }
 }
 
 .scroll-hint {
@@ -87,6 +143,10 @@
   align-items: center;
   gap: 6px;
   width: 116px;
+
+  @include respond($breakpoint-mobile) {
+    margin-right: -24px;
+  }
 }
 
 // Pfeil läuft in einer Schleife durch ein Fenster nach unten
@@ -112,6 +172,10 @@
   font-size: 22px;
   line-height: 1;
   letter-spacing: -0.025em;
+
+  @include respond($breakpoint-mobile) {
+    font-size: 20px;
+  }
 }
 
 @keyframes scroll-arrow {
