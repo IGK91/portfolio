@@ -13,7 +13,15 @@ $font-text: 'Overpass', sans-serif;
 // Layout
 $content-width: 1440px;
 $page-padding: 100px;
+$page-padding-tablet: 48px;
+$page-padding-mobile: 24px;
 $header-height: 92px;
+
+// Breakpoints (max-width)
+$breakpoint-small-desktop: 1279px;
+$breakpoint-tablet: 1023px;
+$breakpoint-mobile: 767px;
+$breakpoint-small-mobile: 374px;
 
 // Animationen
 $transition-fast: 100ms ease-in-out;
