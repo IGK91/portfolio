@@ -3,6 +3,10 @@
 
 .legal {
   padding: $header-height + 57px 0 120px;
+
+  @include respond($breakpoint-mobile) {
+    padding: $header-height + 32px 0 80px;
+  }
 }
 
 .legal__content {
@@ -13,6 +17,11 @@
 .legal__title {
   margin-bottom: 64px;
   @include section-title;
+
+  @include respond($breakpoint-mobile) {
+    margin-bottom: 40px;
+    font-size: 30px;
+  }
 }
 
 .legal__subtitle {
@@ -24,6 +33,10 @@
 
   &:first-of-type {
     margin-top: 0;
+  }
+
+  @include respond($breakpoint-mobile) {
+    font-size: 20px;
   }
 }
 
@@ -46,4 +59,9 @@
   padding-top: 109px;
   background-color: $color-black;
   @include slanted-top(37px);
+
+  @include respond($breakpoint-mobile) {
+    padding-top: 90px;
+    @include slanted-top(14vw);
+  }
 }
