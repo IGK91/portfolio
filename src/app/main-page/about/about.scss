@@ -130,9 +130,11 @@
     width: calc(100% - 12px);
     margin-top: 5px;
 
+    // Auf dem Handy gibt es kein Hover, deshalb blinkt der Rahmen
     &::after {
       top: 12px;
       left: 12px;
+      animation: photo-frame 2.6s ease-in-out infinite;
     }
   }
 }
@@ -142,4 +144,10 @@
   height: auto;
   aspect-ratio: 1;
   object-fit: cover;
+}
+
+@keyframes photo-frame {
+  50% {
+    opacity: 1;
+  }
 }

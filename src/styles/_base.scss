@@ -88,3 +88,10 @@ button {
     }
   }
 }
+
+// Blinken der Überschriften auf dem Handy (wird im Mixin section-title benutzt)
+@keyframes title-blink {
+  50% {
+    color: $color-green;
+  }
+}

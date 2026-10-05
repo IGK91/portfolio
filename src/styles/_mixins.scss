@@ -47,8 +47,10 @@
     font-size: 64px;
   }
 
+  // Auf dem Handy gibt es kein Hover, deshalb blinkt die Überschrift grün
   @include respond($breakpoint-mobile) {
     font-size: 36px;
+    animation: title-blink 2.4s ease-in-out infinite;
   }
 
   @include respond($breakpoint-small-mobile) {
