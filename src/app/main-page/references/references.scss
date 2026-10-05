@@ -3,6 +3,10 @@
 
 .references {
   padding-top: 120px;
+
+  @include respond($breakpoint-mobile) {
+    padding-top: 64px;
+  }
 }
 
 .references__content {
@@ -10,6 +14,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @include respond($breakpoint-mobile) {
+    padding-inline: 16px;
+  }
 }
 
 .references__title {
@@ -22,6 +30,15 @@
   font-size: 22px;
   line-height: 1.2;
   text-align: center;
+
+  @include respond($breakpoint-mobile) {
+    align-self: stretch;
+    max-width: none;
+    margin-top: 42px;
+    padding-inline: 10px;
+    font-size: 20px;
+    text-align: left;
+  }
 }
 
 .references__list {
@@ -29,6 +46,14 @@
   gap: 24px;
   width: 100%;
   margin-top: 40px;
+
+  @include respond($breakpoint-tablet) {
+    flex-direction: column;
+  }
+
+  @include respond($breakpoint-mobile) {
+    margin-top: 55px;
+  }
 }
 
 // Karte mit Rahmen, beim Hover grün
@@ -54,6 +79,16 @@
     .reference__quote--hover {
       display: block;
     }
+  }
+
+  @include respond($breakpoint-tablet) {
+    min-height: 0;
+    padding: 32px 24px;
+  }
+
+  @include respond($breakpoint-mobile) {
+    min-height: 344px;
+    padding: 24px 16px;
   }
 }
 
