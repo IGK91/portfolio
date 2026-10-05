@@ -218,7 +218,7 @@
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: url('/icons/checkbox.svg') center / 18px 18px no-repeat;
+  background: url('icons/checkbox.svg') center / 18px 18px no-repeat;
   transition: background-color $transition-fast;
 }
 
@@ -227,7 +227,7 @@
 }
 
 .privacy__input:checked + .privacy__box {
-  background-image: url('/icons/checkbox-checked.svg');
+  background-image: url('icons/checkbox-checked.svg');
 }
 
 .privacy__input:focus-visible + .privacy__box {
