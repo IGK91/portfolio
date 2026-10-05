@@ -1,3 +1,4 @@
+@use '../../../styles/variables' as *;
 @use '../../../styles/mixins' as *;
 
 .portfolio__content {
@@ -17,6 +18,15 @@
   font-size: 22px;
   line-height: 1.2;
   text-align: center;
+
+  @include respond($breakpoint-mobile) {
+    align-self: stretch;
+    max-width: none;
+    margin-top: 42px;
+    padding-left: 1px;
+    font-size: 20px;
+    text-align: left;
+  }
 }
 
 .portfolio__list {
@@ -25,4 +35,9 @@
   gap: 70px;
   width: 100%;
   margin-top: 118px;
+
+  @include respond($breakpoint-mobile) {
+    gap: 40px;
+    margin-top: 64px;
+  }
 }
